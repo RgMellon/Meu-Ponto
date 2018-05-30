@@ -1,13 +1,15 @@
 {
   "name": "ponto-horario",
   "version": "1.0.0",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "App para guardar horarios de ponto",
+  "productName": "MeuPonto",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Renan <rgmelo94@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "build": "quasar build -m pwa",
+    "start": "node server.js",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",

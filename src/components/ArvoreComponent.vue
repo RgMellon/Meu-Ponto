@@ -29,77 +29,124 @@ export default {
         header: 'root',
         children: [
           {
-            label: 'Dia 28',
+            label: 'Dia 28, Segunda',
             icon: 'today',
             color: 'green',
             header: 'generic',
             children: [
               {
-                label: 'Segunda',
+                label: 'Entrada : 11:00',
+                header: 'generic',
+                color: 'yellow',
+              },
+              {
+                label: 'Almoço : 11:00',
+                header: 'generic',
+                color: 'purple',
+              },
+              {
+                label: 'Volta do almoço : 12:00',
+                header: 'generic',
+                color: 'grey',
+              },
+              {
+                label: 'Saída : 11:00',
                 header: 'generic',
                 color: 'red',
-                body: 'toggle',
-                  children: [
-                    { label: 'Entrada ás 7:00' },
-                    { label: 'Almoço ás 11:00 ' },
-                    { label : 'Volta Do Almoço ás 12:00'},
-                    { label: 'Saída ás 17:00'}
-                  ]
               },
-              {
-                label: 'Terça',
-                header: 'generic',
-                body: 'toggle',
-                color: 'yellow-14',
-                  children: [
-                    { label: 'Entrada ás 7:00' },
-                    { label: 'Almoço ás 11:00 ' },
-                    { label : 'Volta Do Almoço ás 12:00'},
-                    { label: 'Saída ás 17:00'}
-                  ]
-              },
-              {
-                label: 'Quarta',
-                header: 'generic',
-                body: 'toggle',
-                color: 'deep-orange',
-                  children: [
-                    { label: 'Entrada ás 7:00' },
-                    { label: 'Almoço ás 11:00 ' },
-                    { label : 'Volta Do Almoço ás 12:00'},
-                    { label: 'Saída ás 17:00'}
-                  ]
-              },
-              {
-                label: 'Quinta',
-                header: 'generic',
-                body: 'toggle',
-                color: 'brown',
-                  children: [
-                    { label: 'Entrada ás 7:00' },
-                    { label: 'Almoço ás 11:00 ' },
-                    { label : 'Volta Do Almoço ás 12:00'},
-                    { label: 'Saída ás 17:00'}
-                  ]
-              },
-              {
-                label: 'Sexta',
-                header: 'generic',
-                body: 'toggle',
-                color: 'purple',
-                  children: [
-                    { label: 'Entrada ás 7:00' },
-                    { label: 'Almoço ás 11:00 ' },
-                    { label : 'Volta Do Almoço ás 12:00'},
-                    { label: 'Saída ás 17:00'}
-                  ]
-              },
-              {
+             {
                 label: 'Total de Horas ',
                 body: 'story',
                 story: '2 horas positivas'
               }
-            ]
+            ],
+            children: [
+              {
+                label: 'Entrada : 11:00',
+                header: 'generic',
+                color: 'yellow',
+              },
+              {
+                label: 'Almoço : 11:00',
+                header: 'generic',
+                color: 'purple',
+              },
+              {
+                label: 'Volta do almoço : 12:00',
+                header: 'generic',
+                color: 'grey',
+              },
+              {
+                label: 'Saída : 11:00',
+                header: 'generic',
+                color: 'red',
+              },
+             {
+                label: 'Total de Horas ',
+                body: 'story',
+                story: '2 horas positivas'
+              }
+            ],
+          },
+          {
+            label: 'Dia 29, Terça',
+            icon: 'today',
+            color: 'red',
+            header: 'generic',
+            children: [
+              {
+                label: 'Entrada : 11:00',
+                header: 'generic',
+                color: 'yellow',
+              },
+              {
+                label: 'Almoço : 11:00',
+                header: 'generic',
+                color: 'purple',
+              },
+              {
+                label: 'Volta do almoço : 12:00',
+                header: 'generic',
+                color: 'grey',
+              },
+              {
+                label: 'Saída : 11:00',
+                header: 'generic',
+                color: 'red',
+              },
+             {
+                label: 'Total de Horas ',
+                body: 'story',
+                story: '2 horas positivas'
+              }
+            ],
+            children: [
+              {
+                label: 'Entrada : 11:00',
+                header: 'generic',
+                color: 'yellow',
+              },
+              {
+                label: 'Almoço : 11:00',
+                header: 'generic',
+                color: 'purple',
+              },
+              {
+                label: 'Volta do almoço : 12:00',
+                header: 'generic',
+                color: 'grey',
+              },
+              {
+                label: 'Saída : 11:00',
+                header: 'generic',
+                color: 'red',
+              },
+             {
+                label: 'Total de Horas ',
+                body: 'story',
+                story: '2 horas positivas'
+              }
+            ],
           },
           {
             label: 'Saldo Mensal de horas ',
