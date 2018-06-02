@@ -1,16 +1,34 @@
 <template>
   <div>
     <div v-for="(item, index) of this.items">
-      <q-collapsible icon="calendar_today" :label="index | formataMes">
-        <hr>
+      <q-collapsible style="margin-top: 1rem" class="header-c">
+        <template slot="header">
+          <q-item-side right>
+            <q-icon name="calendar_today" color="primary" size="26px" />
+          </q-item-side>
+          <q-item-main center :label="index | formataMes" />
+        </template>
         <div>
           <div v-for="(j, index) of item">
-            <q-collapsible icon="date_range" :label="index | formataDiaMesAno">
+          <q-item-separator />
+            <q-collapsible>
+              <template slot="header">
+                <q-item-side right>
+                  <q-icon name="date_range" color="primary" size="24px" />
+                </q-item-side>
+                <q-item-main center :label="index | formataDiaMesAno" />
+              </template>
               <div>
-                <div v-for="(y, index) of j" class="row reverse justify-between">
-                  <div v-for="p of y" >
-                    {{ p | formataPeriodo }}
-                  </div>
+                <div v-for="(y, index) of j" class="row justify-between">
+                  <q-item style="margin-left: 1.5rem">
+                    <q-item-main>
+                    <q-icon name="data_usage" :color="mudaCor(y['periodo'])" size="22px" />
+                      {{ y['periodo'] | formataPeriodo }} : 
+                    </q-item-main>
+                    <q-item-side right>
+                      {{ y['horario'] }}
+                    </q-item-side>
+                  </q-item>
                 </div>
               </div>
             </q-collapsible>
@@ -206,15 +224,23 @@ export default {
       return(mes[n-1])
     }
   },
-
+  methods: {
+    mudaCor(entrada) {
+      let primeiraLetra  = entrada.charAt(0);
+       primeiraLetra == 'e' ? primeiraLetra = 'green' : ''
+       primeiraLetra == 'a' ? primeiraLetra = 'yellow' : ''
+       primeiraLetra == 'v' ? primeiraLetra = 'purple' : ''
+       primeiraLetra == 's' ? primeiraLetra = 'red' : ''
+       return primeiraLetra;
+    }
+  }
 }
 </script>
 
 <style scoped>
-  .teste {
-    width: 100%;
-    min-height: 70px;
-    margin: 1rem;
-    background: red;
+  .header-c {
+    background: #f6f7fb69;
+    box-shadow: 0px 3px 5px 0px rgba(182, 194, 201, 0.75);
+    padding: 0.4rem;
   }
 </style>
