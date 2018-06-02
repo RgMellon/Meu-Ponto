@@ -7,8 +7,8 @@
     <q-datetime color="blue" v-if="$q.theme === 'mat'" v-model="hora" type="time" format24h 
     float-label="Hora em que bateu o ponto" />
     
-    <q-btn :loading="loading1" color="blue-5" text-color="white" style="margin-top:2rem"
-     @click="simulateProgress(1)" no-caps label="Salvar" class="full-width" />
+    <q-btn :loading="loading" color="blue-5" text-color="white" style="margin-top:2rem"
+     @click="adicionar" no-caps label="Salvar" class="full-width" />
   </div>
 </template>
 
@@ -25,18 +25,14 @@ export default {
           {label: 'Volta do almoço', value: 'volta_almoco'},
           {label: 'Saída', value: 'saida'}
         ],
-         loading1: false,
+        loading: false,
     }
   },
   methods: {
-    simulateProgress (number) {
-      // we set loading state
-      this[`loading${number}`] = true
-      // simulate a delay
-      setTimeout(() => {
-        // we're done, we reset loading state
-        this[`loading${number}`] = false
-      }, 3000)
+    adicionar () {
+      this.loading = true
+      this.$addHora(this.select, this.hora);
+      this.loading = false;
     },
   }
 }

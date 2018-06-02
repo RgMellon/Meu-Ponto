@@ -10,6 +10,9 @@ var app = initializeApp({
     messagingSenderId: "782809280201"
 });
 
+const db = app.database();
+export { db }
+
 export default ({ Vue }) => {
   Vue.use(VueFire);
   Vue.prototype.$firebase = app.database();

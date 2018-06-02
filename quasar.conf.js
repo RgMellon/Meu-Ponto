@@ -4,7 +4,9 @@ module.exports = function (ctx) {
   return {
     plugins: [
       'axios',
-      'firebase'
+      'firebase',
+      'adicionarHora',
+      'substituiNumPorMes',
     ],
     css: [
       'app.styl'
@@ -57,6 +59,7 @@ module.exports = function (ctx) {
         'QSelect',
         'QDatetime',
         'QScrollArea',
+        'QCollapsible'
       ],
       directives: [
         'Ripple'

@@ -1,28 +1,38 @@
 <template>
-  <div>
-     <p class="caption"> </p>
-     <q-tree :nodes="customize" node-key="label">
-        <div slot="header-root" slot-scope="prop" class="row items-center">
-          <q-icon :name="prop.node.icon || 'calendar_today'" color="primary" size="30px" class="q-mr-sm" />
-          <div>
-            {{ prop.node.label }}
+  <q-list>
+    <div v-for="(item, index) of this.items">
+      <q-collapsible icon="calendar_today" :label="index | formataMes">
+        <hr>
+        <div>
+          <div v-for="(j, index) of item">
+            <q-collapsible icon="date_range" :label="index | formataDiaMesAno">
+              <div>
+                <div v-for="(y, index) of j" class="row reverse justify-between">
+                  <div v-for="p of y" >
+                    {{ p | formataPeriodo }}
+                  </div>
+                </div>
+              </div>
+            </q-collapsible>
           </div>
         </div>
-        <div slot="header-generic" slot-scope="prop" class="row items-center">
-          <q-icon :name="prop.node.icon || 'data_usage'" :color="prop.node.color" size="25px" class="q-mr-sm" />
-          <div class="text-weight-bold text-primary">{{ prop.node.label }}</div>
-        </div>
-       <div slot="body-story" slot-scope="prop">
-          <span class="text-weight-thin">Saldo : </span> {{ prop.node.story }}
-        </div>
-     </q-tree>
-  </div>
+      </q-collapsible>
+    </div>
+  </q-list>
 </template>
 
 <script>
+import firebase from 'firebase';
 export default {
   name: 'ArvoreComponent',
+  mounted() {
+    const dbRefHoras = this.$firebase.ref().child('horas');
+    dbRefHoras.on('value', snap => {
+        this.items = snap.val();
+    });
+  },
   data: () => ({
+    items: '',
     customize: [
       {
         label: 'Maio, 2018',
@@ -158,9 +168,53 @@ export default {
         ]
       }
     ],
-  })
+  }),
+  filters:  {
+    formataPeriodo(value) {
+      if (!value) return ''
+      value = value.toString()
+      let valorFormatado = value.charAt(0).toUpperCase() + value.slice(1)
+      valorFormatado = valorFormatado.replace('c', 'ç')
+      if(valorFormatado.match(/_/)){
+        return valorFormatado.replace('_', ' do ');
+      }
+      return valorFormatado;
+    },
+    formataDiaMesAno(value){
+      if(!value) return ''
+      let data = value.split('_');
+      let dataFormatada = data.map(item => item.length == 1 ? `0${item}` : item )
+      return dataFormatada.toString().replace(/,/g, '/');
+    },
+    formataMes(value){
+      let m = value.charAt(0);
+      let mes = [
+       'Janeiro',
+       'Fevereiro',
+       'Março',
+       'Abril',
+       'Maio',
+       'Junho',
+       'Julho',
+       'Agosto',
+       'Setembro',
+       'Outubro',
+        'Novembro',
+        'Dezembro'
+      ]
+      let n = parseInt(m)
+      return(mes[n-1])
+    }
+  },
+
 }
 </script>
 
-<style>
+<style scoped>
+  .teste {
+    width: 100%;
+    min-height: 70px;
+    margin: 1rem;
+    background: red;
+  }
 </style>
