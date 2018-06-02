@@ -1,5 +1,5 @@
 <template>
-  <q-list>
+  <div>
     <div v-for="(item, index) of this.items">
       <q-collapsible icon="calendar_today" :label="index | formataMes">
         <hr>
@@ -18,7 +18,7 @@
         </div>
       </q-collapsible>
     </div>
-  </q-list>
+  </div>
 </template>
 
 <script>
