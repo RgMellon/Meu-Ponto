@@ -33,7 +33,20 @@ export default {
       this.loading = true
       this.$addHora(this.select, this.hora);
       this.loading = false;
+      this.showNotification('top-left');
+      this.$emit('esconde');
     },
+    showNotification(position){
+      this.$q.notify({
+        color: 'grey-6' ,
+        textColor: 'white',
+        icon: 'thumb_up',
+        message : ' Horario adicionado :) ',
+        position,
+        avatar: '',
+        actions: null
+      })
+    }
   }
 }
 </script>

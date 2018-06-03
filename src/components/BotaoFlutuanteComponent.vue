@@ -1,8 +1,9 @@
 <template>
   <div class="row justify-around">
-    <q-fab color="blue" icon="add" direction="up" class="btn-flutuante">
+    <q-fab color="blue" icon="add"
+      direction="up" class="btn-flutuante" v-model="open">
         <div class="conteudo-flutuante shadow-6">
-          <addHorario></addHorario>
+          <addHorario @esconde="open = false"></addHorario>
         </div>
     </q-fab>
   </div>
@@ -16,7 +17,14 @@ export default {
     addHorario: AdicionaHorarioComponent,
   },
   data () {
-    return {}
+    return {
+      open: false
+    }
+  },
+  methods: {
+    toggleFab () {
+      this.open = !this.open
+    }
   }
 }
 </script>

@@ -1,9 +1,7 @@
 <template>
    <q-page padding class="row justify-center docs-tree">
     <div style="width: 700px; max-width: 95vw;">
-     
-        <arvore></arvore>
-     
+      <arvore></arvore>
       <btnFlutuante></btnFlutuante>
     </div>
   </q-page>

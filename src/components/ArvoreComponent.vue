@@ -14,7 +14,7 @@
             <q-collapsible>
               <template slot="header">
                 <q-item-side right>
-                  <q-icon name="date_range" color="primary" size="24px" />
+                  <q-icon name="date_range" color="grey-6" size="24px" />
                 </q-item-side>
                 <q-item-main center :label="index | formataDiaMesAno" />
               </template>
@@ -23,7 +23,7 @@
                   <q-item style="margin-left: 1.5rem">
                     <q-item-main>
                     <q-icon name="data_usage" :color="mudaCor(y['periodo'])" size="22px" />
-                      {{ y['periodo'] | formataPeriodo }} : 
+                      {{ y['periodo'] | formataPeriodo }} :
                     </q-item-main>
                     <q-item-side right>
                       {{ y['horario'] }}
