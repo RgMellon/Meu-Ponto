@@ -17,5 +17,7 @@
   o mês e o dia atual, organizando na tela por mês e dias.
 
 
-  ![screen_home_meu_ponto](https://user-images.githubusercontent.com/29661994/41467234-0e1b6a04-707c-11e8-88a1-3d72c1baa9ff.jpg){:height="24px" width="48px"}
+  <p align="center">
+    <img width="460" height="300"      src="https://user-images.githubusercontent.com/29661994/41467234-0e1b6a04-707c-11e8-88a1-3d72c1ba   a9ff.jpg">
+  </p>
 
