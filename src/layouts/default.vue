@@ -3,7 +3,7 @@
     <q-layout-header>
       <q-toolbar color="primary" :inverted="$q.theme === 'ios'">
         <q-toolbar-title>
-          Alôô Mario
+          Meu Ponto
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>

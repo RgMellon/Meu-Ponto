@@ -31,8 +31,16 @@
                   </q-item>
                 </div>
               </div>
+              <q-item-separator />
+              <div style="margin-top: 1rem" class="flex justify-center">
+                <div>
+                  <q-icon name="alarm" size="22px" color="brown-4" />
+                    Horas trabalhadas  : {{ iteraPelasHoras(j) }}
+                </div>
+              </div>
             </q-collapsible>
           </div>
+
         </div>
       </q-collapsible>
     </div>
@@ -232,7 +240,14 @@ export default {
        primeiraLetra == 'v' ? primeiraLetra = 'purple' : ''
        primeiraLetra == 's' ? primeiraLetra = 'red' : ''
        return primeiraLetra;
-    }
+    },
+    iteraPelasHoras(h){
+      let v = [];
+        for (var key in h) {
+          v.push(h[key].horario.replace(/:/g, ','));
+        }
+        return this.$horasTrabalhadasDia(v)
+    },
   }
 }
 </script>

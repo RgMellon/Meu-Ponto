@@ -7,6 +7,7 @@ module.exports = function (ctx) {
       'firebase',
       'adicionarHora',
       'substituiNumPorMes',
+      'horasTrabalhadas'
     ],
     css: [
       'app.styl'
