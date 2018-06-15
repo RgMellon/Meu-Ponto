@@ -42,3 +42,12 @@
 <p align="center">
   <img width="250"  src="https://user-images.githubusercontent.com/29661994/41481301-c46f14a6-70a7-11e8-9240-99360a87ca9a.png">
 </p>
+
+
+## Authors
+
+**Renan Melo** - *Initial work* - [meuPonto](https://github.com/RgMellon/Meu-Ponto)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
